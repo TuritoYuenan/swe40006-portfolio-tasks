@@ -1,0 +1,19 @@
+<Solution>
+	<Configurations>
+		<Platform Name="Any CPU" />
+		<Platform Name="ARM" />
+		<Platform Name="ARM64" />
+		<Platform Name="x64" />
+		<Platform Name="x86" />
+	</Configurations>
+	<Project Path="TimeTravel/TimeTravel.csproj" Id="5d47e30b-1a11-4cb7-b167-a7faec12c4ee" />
+	<Project Path="GeographyLibrary/GeographyLibrary.csproj" Id="557a4908-5187-4b4e-be79-73738f3f8c65" />
+	<Project Path="TemporalLibrary/TemporalLibrary.csproj" Id="27c69c74-a546-49ee-848e-33cb7fd8664d" />
+	<Project Path="UWPPackage/UWPPackage.wapproj" Type="c7167f0d-bc9f-4e6e-afe1-012c56b48db5" Id="9f5c2009-c377-43ec-8adb-ff28036340cd">
+		<Deploy />
+	</Project>
+	<Project Path="WiXPackage/WiXPackage.wixproj" Id="b98b1e1f-35e1-4960-9bf2-f4d120fe2834">
+		<Platform Project="x86" />
+		<Build />
+	</Project>
+</Solution>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product
+		Id="*" Name="Time Travel" Language="1033" Version="1.3.0.0"
+		Manufacturer="Minh-Triet Nguyen-Ta"
+		UpgradeCode="279a98ff-37df-42ab-ad9a-7f382efd10fb"
+	>
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="WiXPackage" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Time Travel" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component Id="TimeTravel.exe" Guid="2E62EFFA-3D88-4D53-AA1E-9ABBA1BF96B7">
+				<File Id="TimeTravel.exe" Name="TimeTravel.exe" Source="$(var.TimeTravel.TargetDir)TimeTravel.exe"></File>
+			</Component>
+			<Component Id="GeographyLibrary.dll" Guid="89BFC483-C7FE-4E10-B6C4-9E8C3B6E0272">
+				<File Id="GeographyLibrary.dll" Name="GeographyLibrary.dll" Source="$(var.TimeTravel.TargetDir)GeographyLibrary.dll"></File>
+			</Component>
+			<Component Id="TemporalLibrary.dll" Guid="D3847CF1-13CA-4846-B418-FF0599B0A427">
+				<File Id="TemporalLibrary.dll" Name="TemporalLibrary.dll" Source="$(var.TimeTravel.TargetDir)TemporalLibrary.dll"></File>
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
